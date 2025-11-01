@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌦 Smart Weather Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- LOGIN -->
+<div class="container" id="loginPage">
+  <h2>Login</h2>
+  <input type="email" id="loginEmail" placeholder="Email">
+  <input type="password" id="loginPassword" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p style="text-align:center;">No account? <a href="#" onclick="showRegister()">Register</a></p>
+</div>
+
+<!-- REGISTER -->
+<div class="container hidden" id="registerPage">
+  <h2>Register</h2>
+  <input type="email" id="regEmail" placeholder="Email">
+  <input type="password" id="regPassword" placeholder="Password">
+  <button onclick="register()">Register</button>
+  <p style="text-align:center;">Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+</div>
+
+<!-- DASHBOARD -->
+<div class="container hidden" id="dashboard">
+  <div class="time-display" id="dateTime"></div>
+  <h2>🌦 Smart Weather Dashboard</h2>
+  <input type="text" id="cityInput" placeholder="Enter any city, town or village..." oninput="showSuggestions()">
+  <div id="suggestions"></div>
+  <button onclick="getMyLocation()">📍 My Location</button>
+
+  <div class="weather-box">
+    <h3 id="cityName">-</h3>
+    <p id="temperature">-- °C</p>
+    <p id="description">Condition: --</p>
+    <p>💨 Wind: <span id="windSpeed">--</span> km/h</p>
+    <p>💧 Humidity: <span id="humidity">--</span></p>
+    <p>🌡 Feels Like: <span id="feelsLike">--</span></p>
+    <p>🌅 Sunrise: <span id="sunrise">--</span></p>
+    <p>🌇 Sunset: <span id="sunset">--</span></p>
+  </div>
+
+  <h4>15-Day Forecast</h4>
+  <div class="forecast" id="forecastContainer"></div>
+
+  <button onclick="showSettings()">⚙ Settings</button>
+  <button onclick="logout()">🚪 Logout</button>
+</div>
+
+<!-- SETTINGS -->
+<div class="container hidden" id="settingsPage">
+  <h2>⚙ Settings</h2>
+  <div class="toggle">
+    <label>🌗 Theme:</label>
+    <button onclick="toggleTheme()">Toggle Light/Dark</button>
+  </div>
+  <br>
+  <button onclick="goBack()">⬅ Back to Dashboard</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+  </html>
